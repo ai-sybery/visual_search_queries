@@ -5,14 +5,6 @@ import pandas as pd
 import plotly.graph_objects as go
 from prophet import Prophet
 
-# Конфигурация API
-try:
-    api_key = st.secrets["GOOGLE_API_KEY"]
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel("gemini-1.5-pro-exp-0827")
-except Exception as e:
-    st.error("Ошибка инициализации API Gemini. Проверьте ключ.")
-
 # Конфигурация страницы
 st.set_page_config(page_title="Job Trends", layout="wide")
 
